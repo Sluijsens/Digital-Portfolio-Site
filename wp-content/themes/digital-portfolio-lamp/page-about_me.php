@@ -10,35 +10,22 @@
 
     <div id="inner-content" class="wrap clearfix">
 
-        <div id="main" class="eightcol first clearfix" role="main">
-
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-            <div>
+        <div id="main" class="wrap clearfix" role="main">
+            
+            <img id="about-me-img" src="<?php echo get_template_directory_uri() . "/library/images/about-me-img.png"; ?>" />
+            <div id="about-me-content">
+                <?php if(have_posts()) {
+                    the_post();
+                    
+                    ?>
+                    <h3><?php the_title(); ?></h3>
+                <?php the_content(); ?>
+                    <?php
+                } ?>
+                
             </div>
             
-
-                <?php endwhile;
-            else :
-                ?>
-
-                <article id="post-not-found" class="hentry clearfix">
-                    <header class="article-header">
-                        <h1><?php _e('Oops, Post Not Found!', 'bonestheme'); ?></h1>
-                    </header>
-                    <section class="entry-content">
-                        <p><?php _e('Uh Oh. Something is missing. Try double checking things.', 'bonestheme'); ?></p>
-                    </section>
-                    <footer class="article-footer">
-                        <p><?php _e('This is the error message in the page.php template.', 'bonestheme'); ?></p>
-                    </footer>
-                </article>
-
-<?php endif; ?>
-
         </div> <!-- end #main -->
-
-<?php get_sidebar(); ?>
 
     </div> <!-- end #inner-content -->
 

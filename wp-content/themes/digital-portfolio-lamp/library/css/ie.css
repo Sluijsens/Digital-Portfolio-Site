@@ -190,7 +190,7 @@ BUTTONS
   font-size: 11px;
   font-weight: bold;
   text-decoration: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 1px rgba(0, 0, 0, 0);
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
@@ -451,23 +451,23 @@ do they need tweaking?
 */
 /* end .footer-links */
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
+    Site Name:
+    Author:
+    
+    Stylesheet: Tablet & Small Desktop Stylesheet
+    
+    Here's where you can start getting into the good stuff.
+    This size will work on iPads, other tablets, and desktops.
+    So you can start working with more styles, background images,
+    and other resources. You'll also notice the grid starts to
+    come into play. Have fun!
+    
 ******************************************************************/
 /*********************
-GENERAL STYLES
+    GENERAL STYLES
 *********************/
 /*********************
-LAYOUT & GRID STYLES
+    LAYOUT & GRID STYLES
 *********************/
 /* line 26, ../scss/_768up.scss */
 .wrap {
@@ -475,41 +475,46 @@ LAYOUT & GRID STYLES
 }
 
 /*********************
-HEADER STYLES
+    HEADER STYLES
 *********************/
 /*********************
-NAVIGATION STYLES
+    NAVIGATION STYLES
 *********************/
 /* line 42, ../scss/_768up.scss */
 .nav {
-  background: #eee;
-  border: 0;
+  display: block;
+  position: fixed;
+  border: none;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 46, ../scss/_768up.scss */
+/* line 48, ../scss/_768up.scss */
 .nav li {
   float: left;
   position: relative;
   /*
-  plan your menus and drop-downs wisely.
+      plan your menus and drop-downs wisely.
   */
   /* showing sub-menus */
 }
-/* line 50, ../scss/_768up.scss */
+/* line 52, ../scss/_768up.scss */
 .nav li a {
-  border-bottom: 0;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -moz-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
   */
 }
-/* line 57, ../scss/_768up.scss */
+/* line 63, ../scss/_768up.scss */
 .nav li a:hover, .nav li a:focus {
-  background-color: #dedede;
+  background-color: white;
 }
-/* line 70, ../scss/_768up.scss */
+/* line 76, ../scss/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
@@ -520,16 +525,16 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 78, ../scss/_768up.scss */
+/* line 84, ../scss/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
+      if you need to go deeper, go nuts
+      just remember deeper menus suck
+      for usability. k, bai.
   */
 }
-/* line 80, ../scss/_768up.scss */
+/* line 86, ../scss/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -538,43 +543,43 @@ NAVIGATION STYLES
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
-/* line 97, ../scss/_768up.scss */
+/* line 103, ../scss/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-/* line 119, ../scss/_768up.scss */
+/* line 125, ../scss/_768up.scss */
 .nav li:hover ul {
   top: auto;
   display: block;
 }
 
 /* end .nav */
-/*********************
+    /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 139, ../scss/_768up.scss */
+/* line 145, ../scss/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 143, ../scss/_768up.scss */
+/* line 149, ../scss/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 148, ../scss/_768up.scss */
+/* line 154, ../scss/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 153, ../scss/_768up.scss */
+/* line 159, ../scss/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 161, ../scss/_768up.scss */
+/* line 167, ../scss/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -592,19 +597,19 @@ SIDEBARS & ASIDES
 /* search widget */
 /* text widget */
 /*********************
-FOOTER STYLES
+    FOOTER STYLES
 *********************/
 /*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
+    you'll probably need to do quite a bit
+    of overriding here if you styled them for
+    mobile. Make sure to double check these!
 */
-/* line 269, ../scss/_768up.scss */
+/* line 275, ../scss/_768up.scss */
 .footer-links ul li {
   /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
+      be careful with the depth of your menus.
+      it's very rare to have multi-depth menus in
+      the footer.
   */
 }
 

@@ -16,10 +16,11 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $serif;
-	font-size: 100%;
-	line-height: 1.5;
-	color: #565656;
+	font-family: $sans-serif;
+	font-size: 17px;
+	color: #000000;
+    
+    background-color: #000000;
 }
 
 /********************
@@ -77,7 +78,7 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: #000000;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -105,9 +106,10 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: $sans-serif;
+	font-family: $serif;
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: normal;
+        margin: 0;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -131,7 +133,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 40px;
 }
 
 h4, .h4 {
@@ -167,7 +169,7 @@ and more scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
+	border: 1px solid #fff;
 	border-bottom: 0;
 
 	li {
@@ -176,9 +178,9 @@ and more scalable.
 			display: block;
 			text-decoration: none;
 			padding: 10px 10px;
-			background-color: #eee;
+			background-color: red;
 			border-bottom: 1px solid #ccc;
-
+                        
 			/*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
