@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Get commit message
+COMMIT_MSG=$(cat $1)
+
+# MYSQL DB Info
+DB_NAME="digital-portfolio"
+DB_USER="root"
+DB_PASS=""
+DB_HOST="localhost"
+
+GIT_REPO="/c/xampp/htdocs/Digital-Portfolio-Site" # path to you repo
+BACKUP_DIR="DATABASE_BACKUPS"
+FILENAME="$DB_NAME-$(date +%Y-%m-%d).sql"
+
+echo "New Backup file created: $GIT_REPO/$BACKUP_DIR/$FILENAME"
+
+if [[ "$COMMIT_MSG" == *sql* ]]; then
+/c/xampp/mysql/bin/mysqldump -u $DB_USER --skip-extended-insert $DB_NAME > $GIT_REPO/$BACKUP_DIR/$FILENAME
+cd $GIT_REPO
+git add $BACKUP_DIR/$FILENAME
+fi
