@@ -20,6 +20,7 @@
 -- Table structure for table `dp_commentmeta`
 --
 
+
 DROP TABLE IF EXISTS `dp_commentmeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
