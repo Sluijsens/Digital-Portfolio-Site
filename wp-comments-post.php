@@ -22,7 +22,6 @@ $comment_post_ID = isset($_POST['comment_post_ID']) ? (int) $_POST['comment_post
 $post = get_post($comment_post_ID);
 
 if (empty($post->comment_status)) {
-    
     /**
      * Fires when a comment is attempted on a post that does not exist.
      *
