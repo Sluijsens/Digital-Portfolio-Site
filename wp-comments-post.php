@@ -6,6 +6,7 @@
  * @package WordPress
  */
 if ('POST' != $_SERVER['REQUEST_METHOD']) {
+    
     header('Allow: POST');
     header('HTTP/1.1 405 Method Not Allowed');
     header('Content-Type: text/plain');
