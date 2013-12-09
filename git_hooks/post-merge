@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# MYSQL DB Info
+DB_NAME="digital-portfolio"
+DB_USER="root"
+DB_PASS=""
+DB_HOST="localhost"
+
+GIT_REPO="/c/xampp/htdocs/Digital-Portfolio-Site" # path to you repo
+BACKUP_DIR="DATABASE_BACKUPS"
+
+cd "$GIT_REPO/$BACKUP_DIR"
+LATEST_BACKUP=$(ls -t | head -n 1)
+
+echo "latest file: $GIT_REPO/$BACKUP_DIR/$LATEST_BACKUP"
+
+/c/xampp/mysql/bin/mysql -u $DB_USER $DB_NAME < $LATEST_BACKUP
