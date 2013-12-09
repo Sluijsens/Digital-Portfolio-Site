@@ -33,8 +33,10 @@
 
                     </article> <!-- end article -->
 
-                <?php endwhile;
-            else : ?>
+                    <?php
+                endwhile;
+            else :
+                ?>
 
                 <article id="post-not-found" class="hentry clearfix">
                     <header class="article-header">
@@ -48,11 +50,11 @@
                     </footer>
                 </article>
 
-<?php endif; ?>
+            <?php endif; ?>
 
         </div> <!-- end #main -->
 
-<?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
 
     </div> <!-- end #inner-content -->
 
