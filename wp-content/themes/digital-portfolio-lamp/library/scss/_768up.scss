@@ -19,6 +19,10 @@
 
 body {}
 
+#content {
+    margin: 0;
+}
+
 #container {
     position: fixed;
     
@@ -47,24 +51,110 @@ body {}
     background-color: rgba(255, 255, 255, 0.75);
     border: none;
     border-radius: 10px;
+    
+    #about-me-img {
+        float: left;
+        width: 300px;
+        margin-top: -144px;
+    }
+    
+    #about-me-content {
+        float: left;
+        padding: 25px 25px 0 0;
+        width: 450px;
+        height: 100%;
         
-        #about-me-img {
-            float: left;
-            width: 300px;
-            margin-top: -144px;
-        }
+        margin: 0;
         
-        #about-me-content {
-            float: left;
-            padding: 25px 25px 0 0;
-            width: 450px;
-            height: 100%;
-            
-            margin: 0;
-            
-            overflow-y: auto;
-            border: none;
+        overflow-y: auto;
+        border: none;
+    }
+}
+
+#page-title.projects {
+    height: 100%;
+    
+    text-align: right;
+    
+    h2 {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        
+        color: $white;
+        
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+}
+
+#main.projects {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.project {
+    background-color: rgba(255,255,255, 0.25);
+    
+    border-radius: 10px;
+    overflow: hidden;
+    
+    
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    img {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        
+        opacity: 0.5;
+        
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    span {
+        position: absolute;
+        display: block;
+        padding: 0 5px;
+        
+        bottom: 0;
+        width: 100%;
+        
+        border-radius: 0 0 10px 10px;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: $white;
+        
+        opacity: 0;
+        
+        z-index: 10;
+        
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+    }
+    
+    &:hover {
+        background-color: rgba(255,255,255, 1);
+        
+        img {
+            opacity: 1;
         }
+        span {
+            opacity: 1;
+        }
+    }
 }
 
 /*********************
@@ -211,8 +301,8 @@ body {}
     
 } /* end .nav */
 
-    /*********************
-SIDEBARS & ASIDES
+/*********************
+    SIDEBARS & ASIDES
 *********************/
 
 .sidebar {

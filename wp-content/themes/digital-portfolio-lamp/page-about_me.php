@@ -10,7 +10,7 @@
 
     <div id="inner-content" class="wrap clearfix">
 
-        <div id="main" class="wrap clearfix" role="main">
+        <div id="main" class="about-me wrap clearfix" role="main">
             
             <img id="about-me-img" src="<?php echo get_template_directory_uri() . "/library/images/about-me-img.png"; ?>" />
             <div id="about-me-content">

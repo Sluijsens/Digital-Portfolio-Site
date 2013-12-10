@@ -781,9 +781,9 @@ h1, .h1 {
   line-height: 1.333em; }
 
 h2, .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  font-size: 80px;
+  line-height: 80px;
+  margin-bottom: 15px; }
 
 h3, .h3 {
   font-size: 40px; }
@@ -1294,6 +1294,9 @@ you can add resource intensive styles.
   /*********************
       GENERAL STYLES
   *********************/
+  #content {
+    margin: 0; }
+
   #container {
     position: fixed;
     top: 0;
@@ -1307,7 +1310,7 @@ you can add resource intensive styles.
     height: auto;
     widht: auto; }
 
-  #main {
+  #main.about-me {
     display: block;
     width: 750px;
     height: 400px;
@@ -1316,11 +1319,11 @@ you can add resource intensive styles.
     background-color: rgba(255, 255, 255, 0.75);
     border: none;
     border-radius: 10px; }
-    #main #about-me-img {
+    #main.about-me #about-me-img {
       float: left;
       width: 300px;
       margin-top: -144px; }
-    #main #about-me-content {
+    #main.about-me #about-me-content {
       float: left;
       padding: 25px 25px 0 0;
       width: 450px;
@@ -1328,6 +1331,66 @@ you can add resource intensive styles.
       margin: 0;
       overflow-y: auto;
       border: none; }
+
+  #page-title.projects {
+    height: 100%;
+    text-align: right; }
+    #page-title.projects h2 {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      color: white;
+      -moz-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+
+  #main.projects {
+    max-height: 100%;
+    overflow-y: auto; }
+
+  .project {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .project img {
+      display: block;
+      width: auto;
+      margin: 0 auto;
+      opacity: 0.5;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .project span {
+      position: absolute;
+      display: block;
+      padding: 0 5px;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0 0 10px 10px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+      opacity: 0;
+      z-index: 10;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -ms-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
+    .project:hover {
+      background-color: white; }
+      .project:hover img {
+        opacity: 1; }
+      .project:hover span {
+        opacity: 1; }
 
   /*********************
       LAYOUT & GRID STYLES
@@ -1422,9 +1485,9 @@ you can add resource intensive styles.
         display: block; }
 
   /* end .nav */
-    /*********************
-SIDEBARS & ASIDES
-*********************/
+  /*********************
+      SIDEBARS & ASIDES
+  *********************/
   .sidebar {
     margin-top: 2.2em; }
 
@@ -1485,7 +1548,9 @@ you can add resource intensive styles.
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop. 
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .wrap.projects {
+    max-width: none; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -1511,8 +1576,11 @@ This is for the larger monitors and possibly full screen viewers.
     background-repeat: no-repeat;
     background-position: center 260px; }
 
-  #main {
-    margin-top: 180px; } }
+  #main.about-me {
+    margin-top: 180px; }
+
+  .wrap.projects {
+    max-width: none; } }
 /*
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

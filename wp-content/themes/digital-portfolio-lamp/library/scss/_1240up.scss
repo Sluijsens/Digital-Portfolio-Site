@@ -22,6 +22,10 @@ on larger screens.
     background-position: center 260px;
 }
 
-#main {
+#main.about-me {
     margin-top: 180px;
+}
+
+.wrap.projects {
+    max-width: none;;
 }
