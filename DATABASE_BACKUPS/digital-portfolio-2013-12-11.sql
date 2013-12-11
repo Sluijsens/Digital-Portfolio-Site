@@ -316,7 +316,7 @@ CREATE TABLE `dp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,6 +358,7 @@ INSERT INTO `dp_postmeta` VALUES (34,25,'_edit_last','1');
 INSERT INTO `dp_postmeta` VALUES (35,25,'_edit_lock','1386795406:1');
 INSERT INTO `dp_postmeta` VALUES (36,27,'_edit_last','1');
 INSERT INTO `dp_postmeta` VALUES (37,27,'_edit_lock','1386796317:1');
+INSERT INTO `dp_postmeta` VALUES (38,27,'_thumbnail_id','21');
 /*!40000 ALTER TABLE `dp_postmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -623,4 +624,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-11 22:21:17
+-- Dump completed on 2013-12-11 22:31:24

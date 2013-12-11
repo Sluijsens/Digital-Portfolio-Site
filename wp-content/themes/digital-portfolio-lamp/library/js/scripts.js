@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
         if ($(".project").size() > 0) {
             var project = $(".project");
             
-            project_width = project.width();
+            project_width = project.width() - 1;
             alert(project_width);
             project.height(project_width);
 
@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
     var toggleSizeProjectsOnOverview = function(el, enlarge) {
         var project = el;
         if(enlarge) {
-            var enlarged_width = (project_width * 1.3);
+            var enlarged_width = (project_width * 1.6);
             
             project.width(enlarged_width);
             project.height(enlarged_width);
