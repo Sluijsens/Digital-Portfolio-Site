@@ -33,6 +33,10 @@ jQuery(document).ready(function($) {
 
     /* Declare functions */
     var project_width = 0;
+    var margin_left = $(".project").css("margin-left");
+    var margin_right = $(".project").css("margin-right");
+    var margin_bottom = $(".project").css("margin-bottom");
+    var margin_top = $(".project").css("margin-top");
     var setSizeProjectsOnOverview = function() {
         if ($(".project").size() > 0) {
             var project = $(".project");
@@ -45,8 +49,8 @@ jQuery(document).ready(function($) {
         }
     }
     
-    var toggleSizeProjectsOnOverview = function(enlarge) {
-        var project = $(".project");
+    var toggleSizeProjectsOnOverview = function(el, enlarge) {
+        var project = el;
         if(enlarge) {
             var enlarged_width = (project_width * 1.3);
             
@@ -54,11 +58,34 @@ jQuery(document).ready(function($) {
             project.height(enlarged_width);
 
             $("img", project).height(enlarged_width);
+            
+            margin_left = el.css("margin-left");
+            margin_right = el.css("margin-right");
+            margin_bottom = el.css("margin-bottom");
+            margin_top = el.css("margin-top");
+            var new_margin_left = parseInt(margin_left.replace("px", "")) - ((enlarged_width - project_width) / 2);
+            var new_margin_right = parseInt(margin_right.replace("px", "")) - ((enlarged_width - project_width) / 2);
+            var new_margin_bottom = parseInt(margin_bottom.replace("px", "")) - ((enlarged_width - project_width) / 2);
+            var new_margin_top = parseInt(margin_top.replace("px", "")) - ((enlarged_width - project_width) / 2);
+            
+            project.css({
+                "margin-left": new_margin_left + "px",
+                "margin-right": new_margin_right + "px",
+                "margin-bottom": new_margin_bottom,
+                "margin-top": new_margin_top
+            });
         } else {
             project.width(project_width);
             project.height(project_width);
 
             $("img", project).height(project_width);
+            
+            project.css({
+                "margin-left": margin_left,
+                "margin-right": margin_right,
+                "margin-bottom": margin_bottom,
+                "margin-top": margin_top
+            });
         }
     }
     
@@ -120,9 +147,9 @@ jQuery(document).ready(function($) {
         });
         
         $(".project").on("mouseenter", function() {
-            toggleSizeProjectsOnOverview(true);
+            toggleSizeProjectsOnOverview($(this), true);
         }).on("mouseleave", function() {
-            toggleSizeProjectsOnOverview(false);
+            toggleSizeProjectsOnOverview($(this), false);
         });
     }
 

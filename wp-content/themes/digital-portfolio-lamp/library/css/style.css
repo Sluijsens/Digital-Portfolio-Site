@@ -1348,9 +1348,16 @@ you can add resource intensive styles.
 
   #main.projects {
     max-height: 100%;
-    overflow-y: auto; }
+    overflow: visible; }
+    #main.projects .row {
+      float: left;
+      margin-top: 2.762430939%;
+      width: 100%;
+      height: auto;
+      overflow: visible; }
 
   .project {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 10px;
     overflow: hidden;
@@ -1358,7 +1365,8 @@ you can add resource intensive styles.
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
+    transition: all 0.2s ease-in-out;
+    z-index: 10; }
     .project img {
       display: block;
       width: auto;
@@ -1386,7 +1394,8 @@ you can add resource intensive styles.
       -o-transition: opacity 0.2s ease-in-out;
       transition: opacity 0.2s ease-in-out; }
     .project:hover {
-      background-color: white; }
+      background-color: white;
+      z-index: 15; }
       .project:hover img {
         opacity: 1; }
       .project:hover span {

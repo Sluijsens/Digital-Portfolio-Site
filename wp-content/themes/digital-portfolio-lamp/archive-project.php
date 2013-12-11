@@ -26,12 +26,13 @@
                     $image_url = "";
                 }
                 
+                $first_last = "";
                 if ($i == 0) {
                     $first_last = "first";
                     ?>
                     <div class="row">
                         <?php
-                    } else if($i == 2) {
+                    } else if ($i == 2) {
                         $first_last = "last";
                     }
                     ?>
@@ -44,6 +45,7 @@
                         ?>
                     </div>
                     <?php
+                    $i = -1;
                 }
                 $i++;
             }
