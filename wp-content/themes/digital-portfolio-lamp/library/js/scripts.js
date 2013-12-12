@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
             var project = $(".project");
             
             project_width = project.width() - 1;
-            alert(project_width);
+            
             project.height(project_width);
 
             $("img", project).height(project_width);
@@ -75,16 +75,16 @@ jQuery(document).ready(function($) {
                 "margin-top": new_margin_top
             });
         } else {
-            project.width(project_width);
+            project.width("");
             project.height(project_width);
 
             $("img", project).height(project_width);
             
             project.css({
-                "margin-left": margin_left,
-                "margin-right": margin_right,
-                "margin-bottom": margin_bottom,
-                "margin-top": margin_top
+                "margin-left": "",
+                "margin-right": "",
+                "margin-bottom": "",
+                "margin-top": ""
             });
         }
     }
