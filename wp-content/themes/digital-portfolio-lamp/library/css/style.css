@@ -1426,6 +1426,8 @@ you can add resource intensive styles.
     left: 0;
     text-align: center;
     border: none;
+    background-color: black;
+    z-index: 50;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }

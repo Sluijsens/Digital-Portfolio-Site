@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
     var toggleSizeProjectsOnOverview = function(el, enlarge) {
         var project = el;
         if(enlarge) {
-            var enlarged_width = (project_width * 1.6);
+            var enlarged_width = (project_width * 1.25);
             
             project.width(enlarged_width);
             project.height(enlarged_width);
@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
         if ($("#wpadminbar").size() > 0) {
             minusHeight = $("#wpadminbar").height();
         }
-        minusHeight += 10;
+        minusHeight += 0;
 
         $("#inner-content.projects").height($(window).height() - 57 - minusHeight);
         $("#container").css({"margin-top": minusHeight + "px"});

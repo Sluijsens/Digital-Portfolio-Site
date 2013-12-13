@@ -113,7 +113,6 @@ body {}
     border-radius: 10px;
     overflow: hidden;
     
-    
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -202,7 +201,9 @@ body {}
     
     text-align: center;
     border: none;
+    background-color: $black;
     
+    z-index: 50;
     li {
         padding: 0;
         display: inline-block;
