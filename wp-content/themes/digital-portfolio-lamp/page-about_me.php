@@ -5,7 +5,14 @@
 ?>
 
 <?php get_header(); ?>
-
+<script type="text/javascript">
+    (function($){
+        $(window).load(function(){
+            $("#about-me-content").mCustomScrollbar();
+            
+        });
+    })(jQuery);
+</script>
 <div id="content">
 
     <div id="inner-content" class="wrap clearfix">

@@ -1,11 +1,5 @@
 <?php get_header(); ?>
-<script type="text/javascript">
-    jQuery(function($) {
-        $(document).ready(function() {
-            $("#inner-content").mCustomScrollbar();
-        });
-    });
-</script>
+
 <div id="content">
 
     <div id="inner-content" class="projects wrap clearfix">

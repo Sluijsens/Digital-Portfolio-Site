@@ -1325,7 +1325,7 @@ you can add resource intensive styles.
       margin-top: -144px; }
     #main.about-me #about-me-content {
       float: left;
-      padding: 25px 25px 0 0;
+      padding: 25px 25px 25px 0;
       width: 450px;
       height: 100%;
       margin: 0;

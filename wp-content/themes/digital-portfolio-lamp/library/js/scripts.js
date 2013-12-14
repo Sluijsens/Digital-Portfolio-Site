@@ -148,6 +148,7 @@ jQuery(document).ready(function($) {
         
         $(".project").on("mouseenter", function() {
             toggleSizeProjectsOnOverview($(this), true);
+            alert($(this).offset().top);
         }).on("mouseleave", function() {
             toggleSizeProjectsOnOverview($(this), false);
         });

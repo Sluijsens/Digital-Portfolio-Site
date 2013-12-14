@@ -31,10 +31,6 @@
         <!-- Load stylesheets -->
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <link href="<?php echo get_template_directory_uri(); ?>/library/css/custom_scrollbars/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-        
-        <!-- Load js files -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/library/js/custom_scrollbars/jquery.mCustomScrollbar.js"></script>
 
         <!-- wordpress head functions -->
         <?php wp_head(); ?>
@@ -42,7 +38,10 @@
 
         <!-- drop Google Analytics Here -->
         <!-- end analytics -->
-
+        
+        <!-- Load js files -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/custom_scrollbars/jquery.mCustomScrollbar.js"></script>
     </head>
 
     <body <?php body_class(); ?>>
