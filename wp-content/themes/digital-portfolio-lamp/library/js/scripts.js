@@ -49,38 +49,49 @@ jQuery(document).ready(function($) {
         }
     }
     
+    // Enlarge project details on mouse enter and make them smaller on mous eleave
     var toggleSizeProjectsOnOverview = function(el, enlarge) {
-        var project = el;
+        
         if(enlarge) {
-            var enlarged_width = (project_width * 1.25);
-            
-            project.width(enlarged_width);
-            project.height(enlarged_width);
+            var enlarged_width = (project_width * 1.5);
+            var min_margin_top = 15;
+            var new_offset_top = $(el).parent().offset().top;
+            console.log(new_offset_top);
+            el.width(enlarged_width);
+            el.height(enlarged_width);
 
-            $("img", project).height(enlarged_width);
+            $("img", el).height(enlarged_width);
             
-            margin_left = el.css("margin-left");
-            margin_right = el.css("margin-right");
-            margin_bottom = el.css("margin-bottom");
-            margin_top = el.css("margin-top");
-            var new_margin_left = parseInt(margin_left.replace("px", "")) - ((enlarged_width - project_width) / 2);
-            var new_margin_right = parseInt(margin_right.replace("px", "")) - ((enlarged_width - project_width) / 2);
-            var new_margin_bottom = parseInt(margin_bottom.replace("px", "")) - ((enlarged_width - project_width) / 2);
-            var new_margin_top = parseInt(margin_top.replace("px", "")) - ((enlarged_width - project_width) / 2);
+            margin_left = parseInt(el.css("margin-left").replace("px", ""));
+            margin_right = parseInt(el.css("margin-right").replace("px", ""));
+            margin_bottom = parseInt(el.css("margin-bottom").replace("px", ""));
+            margin_top = parseInt(el.css("margin-top").replace("px", ""));
             
-            project.css({
+            var new_margin_left = margin_left - ((enlarged_width - project_width) / 2);
+            var new_margin_right = margin_right - ((enlarged_width - project_width) / 2);
+            var new_margin_bottom = margin_bottom - ((enlarged_width - project_width) / 2);
+            var new_margin_top = margin_top - ((enlarged_width - project_width) / 2);
+            
+            new_offset_top += new_margin_top;
+            console.log(new_offset_top);
+            if(new_offset_top < min_margin_top) {
+                new_margin_bottom += (new_margin_top);
+                new_margin_top = margin_top;
+            }
+            
+            el.css({
                 "margin-left": new_margin_left + "px",
                 "margin-right": new_margin_right + "px",
                 "margin-bottom": new_margin_bottom,
                 "margin-top": new_margin_top
             });
         } else {
-            project.width("");
-            project.height(project_width);
+            el.width("");
+            el.height(project_width);
 
-            $("img", project).height(project_width);
+            $("img", el).height(project_width);
             
-            project.css({
+            el.css({
                 "margin-left": "",
                 "margin-right": "",
                 "margin-bottom": "",
@@ -105,7 +116,7 @@ jQuery(document).ready(function($) {
 
             $("#page-title.projects h2").css({
                 "bottom": (title_width / 2) + "px",
-                "right": -(title_width / 2) + "px"
+                "right": -(title_width / 2.5) + "px"
             });
         }
     }
@@ -148,7 +159,6 @@ jQuery(document).ready(function($) {
         
         $(".project").on("mouseenter", function() {
             toggleSizeProjectsOnOverview($(this), true);
-            alert($(this).offset().top);
         }).on("mouseleave", function() {
             toggleSizeProjectsOnOverview($(this), false);
         });

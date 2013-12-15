@@ -1279,7 +1279,7 @@ you can add resource intensive styles.
     float: right; }
 
   /******************************************************************
-      Site Name:
+      Site Name: 
       Author:
       
       Stylesheet: Tablet & Small Desktop Stylesheet
@@ -1357,6 +1357,7 @@ you can add resource intensive styles.
       overflow: visible; }
 
   .project {
+    display: block;
     position: relative;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 10px;

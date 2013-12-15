@@ -8,7 +8,9 @@
 <script type="text/javascript">
     (function($){
         $(window).load(function(){
-            $("#about-me-content").mCustomScrollbar();
+            $("#about-me-content").mCustomScrollbar({
+                theme: "dark"
+            });
             
         });
     })(jQuery);

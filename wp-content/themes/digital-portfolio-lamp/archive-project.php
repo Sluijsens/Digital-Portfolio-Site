@@ -36,10 +36,10 @@
                         $first_last = "last";
                     }
                     ?>
-                    <div class="project fourcol <?php echo $first_last; ?>">
+                        <a class="project fourcol <?php echo $first_last; ?>" href="<?php the_permalink(); ?>">
                         <img src="<?php echo $image_url; ?>" />
                         <span><?php the_title(); ?></span>
-                    </div>
+                    </a>
                     <?php
                     if ($i == 2 || $post == end($posts)) {
                         ?>
