@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
         if ($(".project").size() > 0) {
             var project = $(".project");
             
-            project_width = project.width() - 1;
+            project_width = project.width() - 5;
             
             project.height(project_width);
 
@@ -115,8 +115,8 @@ jQuery(document).ready(function($) {
             var title_width = $("#page-title.projects h2").width();
 
             $("#page-title.projects h2").css({
-                "bottom": (title_width / 2) + "px",
-                "right": -(title_width / 2.5) + "px"
+                "bottom": "125px",
+                "right": "-125px"
             });
         }
     }

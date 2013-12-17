@@ -1,5 +1,41 @@
 <?php get_header(); ?>
 
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        var resizeContent = function() {
+            var main_menu_height = $("#menu-main-menu").height() + parseInt($("#menu-main-menu").css("margin-top").replace("px", ""));
+            var window_height = $(window).height() - main_menu_height;
+
+            $("#content").height(window_height);
+        }
+
+        $(window).resize(function() {
+            resizeContent();
+            $("#content").mCustomScrollbar("update");
+        });
+
+        $(window).load(function() {
+            resizeContent();
+
+            $("#content").mCustomScrollbar({
+                theme: "light",
+                callbacks: {
+                    whileScrolling: function() {
+                        var top_offset_inner_content = $("#inner-content").offset().top;
+                        var top_offset_page_title = 0 - top_offset_inner_content;
+                        
+                        $("#page-title.projects").css({
+                            "top": top_offset_page_title + "px"
+                        });
+                    }
+                }
+            });
+        }); //End window load
+
+    }); // End document ready
+</script>
+
 <div id="content">
 
     <div id="inner-content" class="projects wrap clearfix">
@@ -36,7 +72,7 @@
                         $first_last = "last";
                     }
                     ?>
-                        <a class="project fourcol <?php echo $first_last; ?>" href="<?php the_permalink(); ?>">
+                    <a class="project fourcol <?php echo $first_last; ?>" href="<?php the_permalink(); ?>">
                         <img src="<?php echo $image_url; ?>" />
                         <span><?php the_title(); ?></span>
                     </a>
@@ -54,7 +90,7 @@
 
         </div> <!-- end #main -->
 
-        <div class="threecol last">
+        <div id="project-filter" class="threecol last">
         </div>
 
     </div> <!-- end #inner-content -->

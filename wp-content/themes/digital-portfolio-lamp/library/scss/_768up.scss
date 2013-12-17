@@ -21,6 +21,7 @@ body {}
 
 #content {
     margin: 0;
+    overflow-y: auto;
 }
 
 #container {
@@ -72,6 +73,7 @@ body {}
 }
 
 #page-title.projects {
+    
     height: 100%;
     
     text-align: right;
@@ -92,8 +94,8 @@ body {}
 }
 
 #main.projects {
-    max-height: 100%;
-    
+    //max-height: 100%;
+    height: auto;
     overflow: visible;
     
         .row {
