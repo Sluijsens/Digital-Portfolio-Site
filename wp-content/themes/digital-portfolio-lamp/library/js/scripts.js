@@ -56,7 +56,8 @@ jQuery(document).ready(function($) {
             var enlarged_width = (project_width * 1.5);
             var min_margin_top = 15;
             var new_offset_top = $(el).parent().offset().top;
-            console.log(new_offset_top);
+            var new_offset_bottom = $(el).parent().offset().top + enlarged_width;
+            console.log(new_offset_bottom + " en " + $("#main").height());
             el.width(enlarged_width);
             el.height(enlarged_width);
 
@@ -68,14 +69,18 @@ jQuery(document).ready(function($) {
             margin_top = parseInt(el.css("margin-top").replace("px", ""));
             
             var new_margin_left = margin_left - ((enlarged_width - project_width) / 2);
+            //alert(margin_left + " en " + new_margin_left + " en " + (enlarged_width - project_width));
             var new_margin_right = margin_right - ((enlarged_width - project_width) / 2);
             var new_margin_bottom = margin_bottom - ((enlarged_width - project_width) / 2);
             var new_margin_top = margin_top - ((enlarged_width - project_width) / 2);
             
             new_offset_top += new_margin_top;
-            console.log(new_offset_top);
+            
             if(new_offset_top < min_margin_top) {
                 new_margin_bottom += (new_margin_top);
+                new_margin_top = margin_top;
+            } else if(new_offset_bottom > $("#main").height()) {
+                new_margin_bottom = 0;
                 new_margin_top = margin_top;
             }
             
