@@ -17,7 +17,10 @@
 
         $(window).load(function() {
             resizeContent();
-
+            $("#project_filter").css({
+                "top": $("#main.projects .row").css("margin-top")
+            });
+            
             $("#content").mCustomScrollbar({
                 theme: "light",
                 callbacks: {
@@ -25,8 +28,15 @@
                         var top_offset_inner_content = $("#inner-content").offset().top;
                         var top_offset_page_title = 0 - top_offset_inner_content;
                         
+                        // Keep the page title on the same place
                         $("#page-title.projects").css({
                             "top": top_offset_page_title + "px"
+                        });
+                        
+                        // Keep the filter on the same place
+                        var row_margin = parseInt($("#main.projects .row").css("margin-top").replace("px", ""));
+                        $("#project_filter").css({
+                            "top": (row_margin + (-top_offset_inner_content)) + "px"
                         });
                     }
                 }
@@ -90,7 +100,19 @@
 
         </div> <!-- end #main -->
 
-        <div id="project-filter" class="threecol last">
+        <div id="project_filter" class="threecol last">
+            <span>
+                <a class="project_tag active_tag">HTML</a>
+            </span>
+            <span>
+            <a class="project_tag">CSS</a>
+            </span>
+            <span>
+            <a class="project_tag active_tag">PHP</a>
+            </span>
+            <span>
+            <a class="project_tag active_tag">WordPress</a>
+            </span>
         </div>
 
     </div> <!-- end #inner-content -->

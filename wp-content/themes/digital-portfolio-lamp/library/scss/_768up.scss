@@ -171,6 +171,40 @@ body {}
     }
 }
 
+.project_tag {
+    display: block;
+    float: left;
+    padding: 3px 5px;
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    
+    -o-transition: background 0.2s ease-in;
+    -ms-transition: background 0.2s ease-in;
+    -webkit-transition: background 0.2s ease-in;
+    transition: background 0.2s ease-in;
+    
+        &:hover, &.active_tag {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 1);
+        }
+}
+
+#project_filter {
+    display: block;
+    height: 100%;
+    
+    text-align: left;
+    
+        span {
+            display: block;
+            float: left;
+            width: 100%;
+            padding: 0;
+            margin: 5px 0 0 -25px;
+        }
+}
+
 /*********************
     LAYOUT & GRID STYLES
 *********************/
