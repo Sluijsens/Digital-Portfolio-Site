@@ -21,7 +21,6 @@ body {}
 
 #content {
     margin: 0;
-    overflow-y: auto;
 }
 
 #container {
@@ -98,14 +97,14 @@ body {}
     height: auto;
     overflow: visible;
     
-        .row {
-            float: left;
-            margin-top: 2.762430939%;
-            width: 100%;
-            height: auto;
-            
-            overflow: visible;
-        }
+    .row {
+        float: left;
+        margin-top: 2.762430939%;
+        width: 100%;
+        height: auto;
+        
+        overflow: visible;
+    }
 }
 
 .project {
@@ -184,10 +183,10 @@ body {}
     -webkit-transition: background 0.2s ease-in;
     transition: background 0.2s ease-in;
     
-        &:hover, &.active_tag {
-            color: #000000;
-            background-color: rgba(255, 255, 255, 1);
-        }
+    &:hover, &.active_tag {
+        color: #000000;
+        background-color: rgba(255, 255, 255, 1);
+    }
 }
 
 #project_filter {
@@ -196,13 +195,30 @@ body {}
     
     text-align: left;
     
-        span {
-            display: block;
-            float: left;
-            width: 100%;
-            padding: 0;
-            margin: 5px 0 0 -25px;
-        }
+    span {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 5px 0 0 -25px;
+    }
+}
+
+#highlighted_project_image {
+    
+    #image_container {
+        margin-top: 150px;
+        height: 400px;
+        width: 250px;
+        
+        background-color: #ffffff;
+        
+        transform: skew(7deg, -14deg) ;
+        -webkit-transform: skew(7deg, -14deg) ;
+        -moz-transform: skew(20deg, -4deg) ;
+        -o-transform: skew(20deg, -4deg) ;
+        -ms-transform: skew(20deg, -4deg) ;
+    }
 }
 
 /*********************
@@ -351,8 +367,8 @@ body {}
     
 } /* end .nav */
 
-/*********************
-    SIDEBARS & ASIDES
+    /*********************
+SIDEBARS & ASIDES
 *********************/
 
 .sidebar {

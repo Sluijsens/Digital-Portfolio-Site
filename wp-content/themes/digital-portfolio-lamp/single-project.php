@@ -4,27 +4,34 @@
 
     <div id="inner-content" class="wrap clearfix">
 
-        <div id="main" class="eightcol first clearfix" role="main">
+        <div id="main" class="twelvecol first clearfix" role="main">
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                    
+                    <div id="highlighted_project_image" class="sixcol first">
+                        <div id="image_container">
+                            <a href="">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    $image_url = wp_get_attachment_url(get_post_thumbnail_id());
+                                } else {
+                                    $image_url = "";
+                                }
+                                ?>
+                                <img style="max-height: 300px" src="<?php echo $image_url; ?>" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="highlighted_project_info" class="sixcol last">
+
+                    </div>
 
                 <?php endwhile; ?>
 
             <?php else : ?>
 
-                <article id="post-not-found" class="hentry clearfix">
-                    <header class="article-header">
-                        <h1><?php _e('Oops, Post Not Found!', 'bonestheme'); ?></h1>
-                    </header>
-                    <section class="entry-content">
-                        <p><?php _e('Uh Oh. Something is missing. Try double checking things.', 'bonestheme'); ?></p>
-                    </section>
-                    <footer class="article-footer">
-                        <p><?php _e('This is the error message in the single.php template.', 'bonestheme'); ?></p>
-                    </footer>
-                </article>
+                No project was found.
 
             <?php endif; ?>
 
