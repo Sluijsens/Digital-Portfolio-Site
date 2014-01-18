@@ -40,6 +40,33 @@ body {}
     widht: auto;
 }
 
+body.single-project {
+        #container {
+            background: url(../images/highlight-background.png);
+            background-repeat: no-repeat;
+            background-position: top left ;
+            
+            #bg-overlay {
+                position: fixed;
+                
+                width: auto;
+                height: auto;
+                
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                
+                background: url(../images/highlight-background-overlay.png);
+                background-repeat: no-repeat;
+                background-position: top left ;
+                opacity: 0.2;
+                
+                z-index: 1000;
+            }
+        }
+}
+
 #main.about-me {
     display: block;
     width: 750px;
@@ -208,8 +235,8 @@ body {}
     
     #image_container {
         margin-top: 150px;
-        height: 400px;
-        width: 250px;
+        height: 600px;
+        width: 400px;
         
         background-color: #ffffff;
         
@@ -218,6 +245,8 @@ body {}
         -moz-transform: skew(20deg, -4deg) ;
         -o-transform: skew(20deg, -4deg) ;
         -ms-transform: skew(20deg, -4deg) ;
+        
+        border-radius: 10px;
     }
 }
 
@@ -254,7 +283,7 @@ body {}
     
     text-align: center;
     border: none;
-    background-color: $black;
+    background-color: none;
     
     z-index: 50;
     li {

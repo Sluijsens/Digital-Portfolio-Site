@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-
+<div id="bg-overlay">
+</div>
 <div id="content">
 
     <div id="inner-content" class="wrap clearfix">
