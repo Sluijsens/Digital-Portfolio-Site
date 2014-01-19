@@ -1,1 +1,4 @@
 wp-config-local.php
+wp/
+vendor/
+content/uploads/

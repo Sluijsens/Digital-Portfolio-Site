@@ -37,7 +37,18 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+define('WP_HOME', 'http://www.mydomainn.ext');
+define('WP_SITEURL', 'http://www.mydomainn.ext/wp'); // Please don't forget the /wp at the end!
 }
+
+
+// ========================
+// Custom Content Directory
+// ========================
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/content');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -74,7 +85,7 @@ $table_prefix  = 'dp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', 'en_EN');
+define('WPLANG', 'nl_NL');
 
 /**
  * For developers: WordPress debugging mode.
@@ -89,7 +100,7 @@ define('WP_DEBUG', false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+	define('ABSPATH', dirname(__FILE__) . '/wp');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
