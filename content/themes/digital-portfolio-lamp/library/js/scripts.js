@@ -125,6 +125,15 @@ jQuery(document).ready(function($) {
             });
         }
     }
+    
+    $.fn.align_vertically = function() {
+        
+        var height = $( this ).height();
+        var parent_height = $( this ).parent().height();
+        var margin_top = ( parent_height / 2 ) - ( height / 2);
+        
+        $( this ).css( 'margin-top', margin_top + 'px' );
+    }
 
     /*
      Responsive jQuery is a tricky thing.
@@ -167,6 +176,8 @@ jQuery(document).ready(function($) {
         }).on("mouseleave", function() {
             toggleSizeProjectsOnOverview($(this), false);
         });
+        
+        $( '#highlighted_project_image img' ).align_vertically();
     }
 
     /* off the bat large screen actions */

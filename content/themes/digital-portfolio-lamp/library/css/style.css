@@ -1313,7 +1313,7 @@ you can add resource intensive styles.
   body.single-project #container {
     background: url(../images/highlight-background.png);
     background-repeat: no-repeat;
-    background-position: top left; }
+    background-position: -366px top; }
     body.single-project #container #bg-overlay {
       position: fixed;
       width: auto;
@@ -1324,7 +1324,7 @@ you can add resource intensive styles.
       right: 0;
       background: url(../images/highlight-background-overlay.png);
       background-repeat: no-repeat;
-      background-position: top left;
+      background-position: -366px top;
       opacity: 0.2;
       z-index: 1000; }
 
@@ -1455,7 +1455,13 @@ you can add resource intensive styles.
     -moz-transform: skew(20deg, -4deg);
     -o-transform: skew(20deg, -4deg);
     -ms-transform: skew(20deg, -4deg);
-    border-radius: 10px; }
+    border-radius: 10px;
+    overflow: hidden; }
+    #highlighted_project_image #image_container img {
+      display: block;
+      margin: 0 auto;
+      max-height: 100%;
+      max-width: 100%; }
 
   /*********************
       LAYOUT & GRID STYLES

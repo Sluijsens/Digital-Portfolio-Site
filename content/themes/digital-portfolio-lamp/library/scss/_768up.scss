@@ -44,7 +44,7 @@ body.single-project {
         #container {
             background: url(../images/highlight-background.png);
             background-repeat: no-repeat;
-            background-position: top left ;
+            background-position: -366px top ;
             
             #bg-overlay {
                 position: fixed;
@@ -59,7 +59,7 @@ body.single-project {
                 
                 background: url(../images/highlight-background-overlay.png);
                 background-repeat: no-repeat;
-                background-position: top left ;
+                background-position: -366px top ;
                 opacity: 0.2;
                 
                 z-index: 1000;
@@ -247,6 +247,15 @@ body.single-project {
         -ms-transform: skew(20deg, -4deg) ;
         
         border-radius: 10px;
+        overflow: hidden;
+        
+        img {
+            display: block;
+            
+            margin: 0 auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
     }
 }
 
