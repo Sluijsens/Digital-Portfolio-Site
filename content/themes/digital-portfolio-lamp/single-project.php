@@ -7,7 +7,11 @@
 
 		<div id="main" class="twelvecol first clearfix" role="main">
 
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<?php
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					?>
 
 					<div id="highlighted_project_image" class="sixcol first">
 						<div id="image_container">
@@ -23,16 +27,36 @@
 					</div>
 
 					<div id="highlighted_project_info" class="sixcol last">
-
+						<h1><?php the_title(); ?></h1>
+						<p>
+							<?php the_content(); ?>
+						</p>
+						
+						<div id='related-projects-gallery'>
+							<div class='gallery-nav'>
+								<a class='nav-prev'>
+									<
+								</a>
+								<a class='nav-next'>
+									>
+								</a>
+								
+								<div class='gallery-content'>
+									<div class='img-container'>
+										
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 
-				<?php endwhile; ?>
+				<?php } // End while loop  ?>
 
-			<?php else : ?>
+			<?php } else { ?>
 
 				No project was found.
 
-			<?php endif; ?>
+			<?php } // End if  ?>
 
 		</div> <!-- end #main -->
 
