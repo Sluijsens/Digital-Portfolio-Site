@@ -21,6 +21,7 @@ body {}
 
 #content {
     margin: 0;
+    height: 100%;
 }
 
 #container {
@@ -41,30 +42,28 @@ body {}
 }
 
 body.single-project {
-        #container {
-            background: url(../images/highlight-background.png);
+    #container {
+        background: none;
+        
+        #bg-overlay {
+            position: absolute;
+            
+            width: 100%;
+            height: 100%;
+            
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            
+            background: url(../images/highlight-background-overlay.png);
             background-repeat: no-repeat;
             background-position: -366px top ;
+            opacity: 0.2;
             
-            #bg-overlay {
-                position: fixed;
-                
-                width: auto;
-                height: auto;
-                
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                
-                background: url(../images/highlight-background-overlay.png);
-                background-repeat: no-repeat;
-                background-position: -366px top ;
-                opacity: 0.2;
-                
-                z-index: 1000;
-            }
+            z-index: 1000;
         }
+    }
 }
 
 #main.about-me {
@@ -231,31 +230,55 @@ body.single-project {
     }
 }
 
-#highlighted_project_image {
+#highlighted_project {
     
-    #image_container {
-        margin-top: 150px;
-        height: 600px;
-        width: 400px;
+    position: absolute;
+    margin: 0 auto;
+    
+    background: url(../images/highlight-background.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: -420px top ;
+    
+    overflow: visible;
+    
+    #highlighted_project_image {
         
-        background-color: #ffffff;
+        height: 100%;
+        width: 25%;
+        margin-left: 5%;
+        float: left;
         
-        transform: skew(7deg, -14deg) ;
-        -webkit-transform: skew(7deg, -14deg) ;
-        -moz-transform: skew(20deg, -4deg) ;
-        -o-transform: skew(20deg, -4deg) ;
-        -ms-transform: skew(20deg, -4deg) ;
-        
-        border-radius: 10px;
-        overflow: hidden;
-        
-        img {
-            display: block;
+        #image_container {
+            margin-top: 15%;
             
-            margin: 0 auto;
-            max-height: 100%;
-            max-width: 100%;
+            background-color: #ffffff;
+            
+            transform: skew(7deg, -14deg) ;
+            -webkit-transform: skew(7deg, -14deg) ;
+            -moz-transform: skew(20deg, -4deg) ;
+            -o-transform: skew(20deg, -4deg) ;
+            -ms-transform: skew(20deg, -4deg) ;
+            
+            border-radius: 10px;
+            overflow: hidden;
+            
+            img {
+                display: block;
+                
+                margin: 0 auto;
+                max-height: 100%;
+                max-width: 100%;
+            }
         }
+    }
+    
+    #highlighted_project_info {
+        
+        height: 100%;
+        width: 65%;
+        
+        float: right;
     }
 }
 
@@ -294,7 +317,7 @@ body.single-project {
     border: none;
     background-color: none;
     
-    z-index: 50;
+    z-index: 1001;
     li {
         padding: 0;
         display: inline-block;
@@ -405,8 +428,8 @@ body.single-project {
     
 } /* end .nav */
 
-    /*********************
-SIDEBARS & ASIDES
+/*********************
+    SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
