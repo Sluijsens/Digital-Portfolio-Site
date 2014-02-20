@@ -157,7 +157,7 @@ jQuery( document ).ready( function( $ ) {
             
         }
         
-        alert( viewport_width + ' / ' + viewport_height + ' = ' + viewport_scale + ' en ' + scale );
+        //alert( viewport_width + ' / ' + viewport_height + ' = ' + viewport_scale + ' en ' + scale );
         
         $( this ).height( height );
         $( this ).width( width );
@@ -226,7 +226,8 @@ jQuery( document ).ready( function( $ ) {
         $( window ).resize( function() {
             setSizeProjectsOnOverview();
             setSizeProjectsOverviewPage();
-            //$( '#highlighted_project' ).setSizeHighlightedProject();
+            $( '#highlighted_project' ).setSizeHighlightedProject();
+            $( '#highlighted_project_image #image_container' ).align_vertically();
         } );
 
         $( ".project" ).on( "mouseenter", function() {

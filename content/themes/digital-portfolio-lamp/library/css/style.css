@@ -1307,7 +1307,7 @@ you can add resource intensive styles.
     background-image: url(../images/background-logo.png);
     background-repeat: no-repeat;
     background-position: center 205px;
-    background-size: 300px;
+    background-size: 100%;
     height: auto;
     widht: auto; }
 
@@ -1325,7 +1325,7 @@ you can add resource intensive styles.
       background-repeat: no-repeat;
       background-position: -366px top;
       opacity: 0.2;
-      z-index: 1000; }
+      z-index: 50; }
 
   #main.about-me {
     display: block;
@@ -1503,7 +1503,7 @@ you can add resource intensive styles.
     text-align: center;
     border: none;
     background-color: none;
-    z-index: 1001;
+    z-index: 100;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
