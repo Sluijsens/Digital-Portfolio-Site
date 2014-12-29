@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "0b942c0e8220ecc779b92fe48b092b5c",
+    "hash": "faea4f838ce69207c9cfcfb9effca089",
     "packages": [
         {
             "name": "fancyguy/webroot-installer",
@@ -49,10 +50,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.8.1",
+            "version": "4.1",
             "dist": {
                 "type": "zip",
-                "url": "http://nl.wordpress.org/wordpress-3.8.1-nl_NL.zip",
+                "url": "http://nl.wordpress.org/wordpress-4.1-nl_NL.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -62,20 +63,14 @@
             "type": "webroot"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
