@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Tienne:400,700,900|Roboto+Condensed:300italic,400italic,700italic,400,300,700);
 /******************************************************************
 Site Name:
 Author:
@@ -17,6 +16,7 @@ of the styles inside media queries.
 /*
  * Corrects `block` display not defined in IE6/7/8/9 & FF3.
  */
+@import url(http://fonts.googleapis.com/css?family=Tienne:400,700,900|Roboto+Condensed:300italic,400italic,700italic,400,300,700);
 article,
 aside,
 details,
@@ -1304,10 +1304,7 @@ you can add resource intensive styles.
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(../images/background-logo.png);
-    background-repeat: no-repeat;
-    background-position: center 205px;
-    background-size: 100%;
+    background: url(../images/background-logo.png) no-repeat center 205px;
     height: auto;
     widht: auto; }
 
@@ -1323,7 +1320,7 @@ you can add resource intensive styles.
       right: 0;
       background: url(../images/highlight-background-overlay.png);
       background-repeat: no-repeat;
-      background-position: -366px top;
+      background-position: center top;
       opacity: 0.2;
       z-index: 50; }
 
@@ -1422,16 +1419,27 @@ you can add resource intensive styles.
   .project_tag {
     display: block;
     float: left;
+    width: auto;
+    height: auto;
     padding: 3px 5px;
     background-color: rgba(255, 255, 255, 0.5);
     color: #000000;
+    text-decoration: none;
     -o-transition: background 0.2s ease-in;
     -ms-transition: background 0.2s ease-in;
     -webkit-transition: background 0.2s ease-in;
     transition: background 0.2s ease-in; }
-    .project_tag:hover, .project_tag.active_tag {
+    .project_tag:hover, .project_tag.active_tag, .project_tag.single-project-tag {
       color: #000000;
       background-color: white; }
+    .project_tag.single-project-tag {
+      margin-right: 5px;
+      display: inline;
+      float: none; }
+
+  .project-tags {
+    width: 100%;
+    height: auto; }
 
   #project_filter {
     display: block;
@@ -1450,7 +1458,7 @@ you can add resource intensive styles.
     background: url(../images/highlight-background.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: -420px top;
+    background-position: center top;
     overflow: visible; }
     #highlighted_project #highlighted_project_image {
       height: 100%;
@@ -1473,9 +1481,12 @@ you can add resource intensive styles.
           max-height: 100%;
           max-width: 100%; }
     #highlighted_project #highlighted_project_info {
+      float: right;
       height: 100%;
       width: 65%;
-      float: right; }
+      padding-top: 6%;
+      padding-left: 2%;
+      color: #ffffff; }
 
   /*********************
       LAYOUT & GRID STYLES
@@ -1772,7 +1783,6 @@ be set to display none.
 
   @page {
     margin: 0.5cm; }
-
   p, h2, h3 {
     orphans: 3;
     widows: 3; }

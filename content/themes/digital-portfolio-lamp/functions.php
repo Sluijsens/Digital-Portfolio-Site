@@ -167,4 +167,11 @@ function bones_comments($comment, $args, $depth) {
     }
 
 // don't remove this bracket!
+
+        // Multi Image Metabox hook to add it to post type 'project'
+        add_filter('images_cpt','dp_image_cpt');
+        function dp_image_cpt(){
+            $cpts = array('project');
+            return $cpts;
+        }
     ?>
