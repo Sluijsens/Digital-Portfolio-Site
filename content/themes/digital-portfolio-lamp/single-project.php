@@ -39,7 +39,21 @@
 						?>
 					</div>
 
-					<div id='related-projects-gallery'>
+					<div id='project-images-gallery'>
+						<div class='gallery-content'>
+							<div class='img-container'>
+								<?php
+
+								$image_src_array = get_images_src('thumbnail');
+
+								foreach( $image_src_array as $image_src ) {
+									echo "<img src='$image_src[0]' />";
+								}
+								?>
+
+							</div>
+						</div>
+
 						<div class='gallery-nav'>
 							<a class='nav-prev'>
 								&lt;
@@ -47,20 +61,6 @@
 							<a class='nav-next'>
 								&gt;
 							</a>
-
-							<div class='gallery-content'>
-								<div class='img-container'>
-									<?php
-
-									$image_src_array = get_images_src('thumbnail');
-
-									foreach( $image_src_array as $image_src ) {
-										echo "<img src='$image_src[0]' />";
-									}
-									?>
-
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>

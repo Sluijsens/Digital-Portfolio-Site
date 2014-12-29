@@ -297,7 +297,31 @@ body.single-project {
 
         color: #ffffff;
 
+        h1 {
+            font-size: 75pt;
+            line-height: 100pt;
+            max-height: 200pt;
+
+            overflow-y: hidden;
+        }
+
     }
+}
+
+#project-images-gallery {
+    padding: 0;
+    position: relative;
+    height: 150px;
+    width: 100%;
+
+    .gallery-nav {
+        position: absolute;
+        height: 20px;
+        top: 65px;
+
+        z-index: 10;
+    }
+
 }
 
 /*********************
