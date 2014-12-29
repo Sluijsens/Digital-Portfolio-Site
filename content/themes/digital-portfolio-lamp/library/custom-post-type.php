@@ -137,7 +137,7 @@ function add_custom_post_types() {
         'query_var' => true,
         'menu_position' => 5, /* this is what order you want it to appear in on the left hand side menu */
         'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
-        'rewrite' => array('slug' => 'project', 'with_front' => false), /* you can specify its url slug */
+        'rewrite' => array('slug' => 'projects', 'with_front' => true), /* you can specify its url slug */
         'has_archive' => 'projects', /* you can rename the slug here */
         'capability_type' => 'post',
         'hierarchical' => false,
