@@ -288,19 +288,21 @@ body.single-project {
     }
     
     #highlighted_project_info {
+        position: relative;
         float: right;
 
         height: 100%;
         width: 65%;
-        padding-top: 6%;
+        padding-top: 5%;
         padding-left: 2%;
+        padding-right: 2%;
 
         color: #ffffff;
 
         h1 {
-            font-size: 75pt;
-            line-height: 100pt;
-            max-height: 200pt;
+            font-size: 60pt;
+            line-height: 80pt;
+            max-height: 160pt;
 
             overflow-y: hidden;
         }
@@ -308,21 +310,100 @@ body.single-project {
     }
 }
 
-#project-images-gallery {
+#project-images-gallery, #enlarged-gallery {
+    display: none;
     padding: 0;
     position: relative;
-    height: 150px;
+    height: auto;
     width: 100%;
+
+    bottom: -15%;
 
     .gallery-nav {
         position: absolute;
         height: 20px;
-        top: 65px;
+        width: 100%;
+        top: 50%;
+        margin-top: -10px;
 
         z-index: 10;
+
+        .nav-prev, .nav-next {
+            width: 20px;
+            height: 20px;
+
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+
+            -o-transition: opacity 0.2s ease-in;
+            -ms-transition: opacity 0.2s ease-in;
+            -webkit-transition: opacity 0.2s ease-in;
+            transition: opacity 0.2s ease-in;
+
+            &:hover {
+                -moz-opacity: 1.0;
+                opacity: 1.0;
+
+                cursor: pointer;
+            }
+        }
+
+        .nav-prev {
+            position: absolute;
+            left: 5px;
+
+            width: 20px;
+            height: 20px;
+
+            background-image: url(../images/project-gallery-nav-prev.png);
+        }
+
+        .nav-next {
+            position: absolute;
+            right: 5px;
+
+            width: 20px;
+            height: 20px;
+
+            background-image: url(../images/project-gallery-nav-next.png);
+        }
     }
 
+    .gallery-content {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+
+        .img-container {
+            position: relative;
+            left: 0;
+            width: auto;
+            white-space: nowrap;
+            height: auto;
+
+            img {
+                display: inline-block;
+
+                width: 30%;
+                height: auto;
+
+                margin-right: 5%;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+        }
+
+    }
 }
+
+#enlarged-gallery {
+    display: block;
+}
+
 
 /*********************
     LAYOUT & GRID STYLES
@@ -357,7 +438,6 @@ body.single-project {
     
     text-align: center;
     border: none;
-    background-color: none;
     
     z-index: 100;
     li {

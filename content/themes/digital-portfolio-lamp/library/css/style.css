@@ -1481,28 +1481,80 @@ you can add resource intensive styles.
           max-height: 100%;
           max-width: 100%; }
     #highlighted_project #highlighted_project_info {
+      position: relative;
       float: right;
       height: 100%;
       width: 65%;
-      padding-top: 6%;
+      padding-top: 5%;
       padding-left: 2%;
+      padding-right: 2%;
       color: #ffffff; }
       #highlighted_project #highlighted_project_info h1 {
-        font-size: 75pt;
-        line-height: 100pt;
-        max-height: 200pt;
+        font-size: 60pt;
+        line-height: 80pt;
+        max-height: 160pt;
         overflow-y: hidden; }
 
-  #project-images-gallery {
+  #project-images-gallery, #enlarged-gallery {
+    display: none;
     padding: 0;
     position: relative;
-    height: 150px;
-    width: 100%; }
-    #project-images-gallery .gallery-nav {
+    height: auto;
+    width: 100%;
+    bottom: -15%; }
+    #project-images-gallery .gallery-nav, #enlarged-gallery .gallery-nav {
       position: absolute;
       height: 20px;
-      top: 65px;
+      width: 100%;
+      top: 50%;
+      margin-top: -10px;
       z-index: 10; }
+      #project-images-gallery .gallery-nav .nav-prev, #project-images-gallery .gallery-nav .nav-next, #enlarged-gallery .gallery-nav .nav-prev, #enlarged-gallery .gallery-nav .nav-next {
+        width: 20px;
+        height: 20px;
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+        -o-transition: opacity 0.2s ease-in;
+        -ms-transition: opacity 0.2s ease-in;
+        -webkit-transition: opacity 0.2s ease-in;
+        transition: opacity 0.2s ease-in; }
+        #project-images-gallery .gallery-nav .nav-prev:hover, #project-images-gallery .gallery-nav .nav-next:hover, #enlarged-gallery .gallery-nav .nav-prev:hover, #enlarged-gallery .gallery-nav .nav-next:hover {
+          -moz-opacity: 1.0;
+          opacity: 1.0;
+          cursor: pointer; }
+      #project-images-gallery .gallery-nav .nav-prev, #enlarged-gallery .gallery-nav .nav-prev {
+        position: absolute;
+        left: 5px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/project-gallery-nav-prev.png); }
+      #project-images-gallery .gallery-nav .nav-next, #enlarged-gallery .gallery-nav .nav-next {
+        position: absolute;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/project-gallery-nav-next.png); }
+    #project-images-gallery .gallery-content, #enlarged-gallery .gallery-content {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden; }
+      #project-images-gallery .gallery-content .img-container, #enlarged-gallery .gallery-content .img-container {
+        position: relative;
+        left: 0;
+        width: auto;
+        white-space: nowrap;
+        height: auto; }
+        #project-images-gallery .gallery-content .img-container img, #enlarged-gallery .gallery-content .img-container img {
+          display: inline-block;
+          width: 30%;
+          height: auto;
+          margin-right: 5%; }
+          #project-images-gallery .gallery-content .img-container img:last-child, #enlarged-gallery .gallery-content .img-container img:last-child {
+            margin-right: 0; }
+
+  #enlarged-gallery {
+    display: block; }
 
   /*********************
       LAYOUT & GRID STYLES
@@ -1529,7 +1581,6 @@ you can add resource intensive styles.
     left: 0;
     text-align: center;
     border: none;
-    background-color: none;
     z-index: 100;
     /* end .menu ul li */
     /* highlight current page */
@@ -1664,7 +1715,10 @@ you can add resource intensive styles.
   
   ******************************************************************/
   .wrap.projects {
-    max-width: none; } }
+    max-width: none; }
+
+  #project-images-gallery {
+    display: block; } }
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
