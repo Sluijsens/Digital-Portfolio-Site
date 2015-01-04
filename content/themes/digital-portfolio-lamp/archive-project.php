@@ -61,7 +61,7 @@
             $get_filter_categories = $_GET['filter-categories'];
 
             $tax_query = array();
-            if( !empty( $get_filter_categories ) && $get_filter_categories != '' ) {
+            if( ! empty( $get_filter_categories ) && $get_filter_categories != '' ) {
                 $filter_categories = explode( ',', $get_filter_categories );
 
                 $tax_query = array(
@@ -72,6 +72,8 @@
                         'operator' => 'AND'
                     ),
                 );
+            } else {
+                $filter_categories = array();
             }
 
             $posts = get_posts(array(
