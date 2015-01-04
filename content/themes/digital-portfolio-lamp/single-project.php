@@ -38,7 +38,7 @@
 
 						?>
 					</div>
-					<a id="enlarge-gallery" href="">Afbeeldingen</a>
+<!--					<a id="enlarge-gallery" href="">Afbeeldingen</a>-->
 					<div id='project-images-gallery'>
 						<div class='gallery-content'>
 							<div class='img-container'>
