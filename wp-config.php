@@ -21,13 +21,13 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'digital-portfolio');
+define('DB_NAME', 'bds_digital_portfolio');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'bds-portfolio');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'hsjjdhheui)oa');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -38,8 +38,8 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('WP_HOME', 'http://www.mydomainn.ext');
-define('WP_SITEURL', 'http://www.mydomainn.ext/wp'); // Please don't forget the /wp at the end!
+define('WP_HOME', 'http://www.bryan-slop.nl');
+define('WP_SITEURL', 'http://www.bryan-slop.nl/wp'); // Please don't forget the /wp at the end!
 }
 
 
