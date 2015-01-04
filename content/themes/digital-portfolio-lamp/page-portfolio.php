@@ -20,7 +20,7 @@
             foreach ($posts as $posts) {
                 setup_postdata($post);
                 
-                echo has_post_thumbnail() ? "Ja" : "Nee";
+//                echo has_post_thumbnail() ? "Ja" : "Nee";
             }
             wp_reset_postdata();
             ?>

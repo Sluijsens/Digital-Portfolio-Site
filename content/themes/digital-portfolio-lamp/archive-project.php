@@ -57,9 +57,27 @@
         <div id="main" class="projects sixcol" role="main">
 
             <?php
+            // Filter
+            $get_filter_categories = $_GET['filter-categories'];
+
+            $tax_query = array();
+            if( !empty( $get_filter_categories ) && $get_filter_categories != '' ) {
+                $filter_categories = explode( ',', $get_filter_categories );
+
+                $tax_query = array(
+                    array(
+                        'taxonomy' => 'project-category',
+                        'field'    => 'slug',
+                        'terms'    => $filter_categories,
+                        'operator' => 'AND'
+                    ),
+                );
+            }
+
             $posts = get_posts(array(
                 "posts_per_page" => -1,
-                "post_type" => "project"
+                "post_type" => "project",
+                "tax_query" => $tax_query
             ));
 
             $i = 0;
@@ -101,18 +119,34 @@
         </div> <!-- end #main -->
 
         <div id="project_filter" class="threecol last">
-            <span>
-                <a class="project_tag active_tag">HTML</a>
-            </span>
-            <span>
-            <a class="project_tag">CSS</a>
-            </span>
-            <span>
-            <a class="project_tag active_tag">PHP</a>
-            </span>
-            <span>
-            <a class="project_tag active_tag">WordPress</a>
-            </span>
+
+            <?php
+            $terms = get_terms('project-category');
+
+            foreach($terms as $term) {
+
+                $active_tag = '';
+                $tmp_link_array = $filter_categories;
+                $link = home_url( 'projects' ) . "?filter-categories=";
+
+                if( in_array( $term->slug, $filter_categories ) ) {
+                    $active_tag = 'active_tag';
+                    if(($key = array_search($term->slug, $tmp_link_array)) !== false) {
+                        unset($tmp_link_array[$key]);
+                    }
+
+                    if( !empty( $tmp_link_array ) ) {
+                        $link .=  implode( ',', $tmp_link_array );
+                    }
+                } else {
+                    if( !empty( $filter_categories ) ) {
+                        $link .= implode( ',', $filter_categories ) . ",{$term->slug}";
+                    }
+                }
+
+                echo "<span><a href='$link' class='project_tag tag_{$term->slug} $active_tag'>{$term->name}</a></span>";
+            }
+            ?>
         </div>
 
     </div> <!-- end #inner-content -->
