@@ -137,12 +137,14 @@
                         unset($tmp_link_array[$key]);
                     }
 
-                    if( !empty( $tmp_link_array ) ) {
+                    if( ! empty( $tmp_link_array ) ) {
                         $link .=  implode( ',', $tmp_link_array );
                     }
                 } else {
-                    if( !empty( $filter_categories ) ) {
+                    if( ! empty( $filter_categories ) ) {
                         $link .= implode( ',', $filter_categories ) . ",{$term->slug}";
+                    } else {
+                        $link .= $term->slug;
                     }
                 }
 
