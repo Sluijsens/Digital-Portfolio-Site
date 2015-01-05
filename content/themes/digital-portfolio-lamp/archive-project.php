@@ -148,7 +148,7 @@
                     }
                 }
 
-                echo "<span><a href='$link' class='project_tag tag_{$term->slug} $active_tag'>{$term->name}</a></span>";
+                echo "<span><a href='$link' class='project_tag tag_{$term->slug} $active_tag'>" . strtoupper( $term->name ) . "</a></span>";
             }
             ?>
         </div>

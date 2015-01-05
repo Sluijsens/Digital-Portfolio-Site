@@ -33,7 +33,7 @@
 						$terms = wp_get_post_terms( get_the_ID(), 'project-category' );
 
 						foreach ( $terms as $term ) {
-							echo "<a class='project_tag single-project-tag' href='" . home_url( 'projects' ) . "?filter-categories={$term->slug}'>{$term->name}</a>";
+							echo "<a class='project_tag single-project-tag' href='" . home_url( 'projects' ) . "?filter-categories={$term->slug}'>" . strtoupper( $term->name ) . "</a>";
 						}
 
 						?>
